@@ -1,0 +1,42 @@
+#coding=utf-8
+
+tx_dic = {}
+
+while True:
+    cxname = int(input('如果想查询练习人：请输入1；如果想添加联系人：请输入2 如果想删除联系人：请输入3 如果想直接退出：请输入4'))
+    
+    if cxname == 1:
+        search_name = input("请输入查询人的名字：")
+
+
+        if search_name in tx_dic.keys():
+            print(" 你查找的是{search_name},电话是{tx_dic[search_name]}")
+        
+        else:
+            print('查无此人')
+    
+    elif cxname == 2:
+        newname = input("输入你要增加的联系人:")
+        
+        if newname in tx_dic.keys():
+            print('输入的联系人已存在')
+
+        else:
+            newnum = input('输入联系人的电话号码')
+            tx_dic[newname] = newnum
+            print('联系人添加成功')
+    
+    elif cxname == 3:
+        delname = input('输入你要删除名字:')
+
+        if delname in tx_dic:
+            del tx_dic[delname]
+            print('删除成功')
+        else:
+            print('删除失败，查无此人')
+    
+    elif cxname == 4:
+        break
+
+else:print('如果想查询练习人：请输入1；如果想添加联系人：请输入2 如果想删除联系人：请输入3 如果想直接退出：请输入4')
+
